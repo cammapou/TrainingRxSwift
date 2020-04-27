@@ -1,0 +1,6 @@
+framework module Pods_testRXSwitf {
+  umbrella header "Pods-testRXSwitf-umbrella.h"
+
+  export *
+  module * { export * }
+}

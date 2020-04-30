@@ -15,9 +15,9 @@ class bouttonViewController: UIViewController {
     let choix1 = CustomButton()
     let choix2 = CustomButton()
     let choix3 = CustomButton()
-    var allButton = [UIButton]()
+    let buttonNextPage = CustomButton()
     
-    private let selectionnedVar =   BehaviorRelay<String>(value: "...")
+    private let selectionnedVar =   BehaviorRelay<String>(value: "")
     
     var selectedCaratere: Observable<String> {
         return selectionnedVar.asObservable()
@@ -30,24 +30,25 @@ class bouttonViewController: UIViewController {
         self.choix2.setButton(string: "dog")
         self.choix3.setButton(string: "human")
         
+        self.buttonNextPage.setButton(string: "Aller à la page suivante, clic ici")
+        
         self.view.backgroundColor = .white
-        self.view.addSubview(choix1)
-        self.view.addSubview(choix2)
-        self.view.addSubview(choix3)
+
+        self.addSubView()
         self.setAnchor()
         self.setNavigationBar()
-        self.loopButton()
+        
         self.choix1.addTarget(.none, action: #selector(setButton1), for: .touchUpInside)
         self.choix2.addTarget(.none, action: #selector(setButton2), for: .touchUpInside)
         self.choix3.addTarget(.none, action: #selector(setButton3), for: .touchUpInside)
-
-        // Do any additional setup after loading the view.
+        self.buttonNextPage.addTarget(.none, action: #selector(setButton4), for: .touchUpInside)
     }
     
-    func loopButton() {
-        allButton.append(choix1)
-        allButton.append(choix2)
-        allButton.append(choix3)
+    func addSubView() {
+        self.view.addSubview(choix1)
+        self.view.addSubview(choix2)
+        self.view.addSubview(choix3)
+        self.view.addSubview(buttonNextPage)
     }
     
     func setNavigationBar() {
@@ -58,17 +59,6 @@ class bouttonViewController: UIViewController {
         navItem.leftBarButtonItem = doneItem
         navBar.setItems([navItem], animated: false)
         self.view.addSubview(navBar)
-        
-
-    }
-    
-    @objc private func setButton() {
-        for button in allButton {
-            guard let charactereName = button.titleLabel?.text else {return}
-
-            selectionnedVar.accept(charactereName)
-
-        }
     }
     
     @objc private func setButton1() {
@@ -84,6 +74,12 @@ class bouttonViewController: UIViewController {
         selectionnedVar.accept(charactereName)
      }
 
+    @objc private func setButton4() {
+        let newViewController = SearchBarViewController()
+        newViewController.modalPresentationStyle = .fullScreen
+        present(newViewController, animated: true, completion: nil)
+     }
+    
     @objc func done() {
         dismiss(animated: true, completion: nil)
     }
@@ -97,6 +93,7 @@ class bouttonViewController: UIViewController {
 
         self.choix3.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 90).isActive = true
         self.choix3.leadingAnchor.constraint(equalTo: self.choix2.trailingAnchor, constant: 20).isActive = true
+        self.buttonNextPage.topAnchor.constraint(equalTo: self.choix2.bottomAnchor, constant: 40).isActive = true
+        self.buttonNextPage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
-
 }

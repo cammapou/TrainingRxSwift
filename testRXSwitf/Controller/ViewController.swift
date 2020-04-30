@@ -17,14 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.label.setupLabel(string: "...")
-        
+        self.label.setupLabel(string: "")
         self.view.addSubview(label)
         self.setAnchor()
         self.setNavigationBar()
-        // Do any additional setup after loading the view.
     }
-    
     
     func setNavigationBar() {
         let screenSize: CGRect = UIScreen.main.bounds
@@ -39,24 +36,16 @@ class ViewController: UIViewController {
     @objc func done() {
         let viewController = bouttonViewController()
         viewController.modalPresentationStyle = .fullScreen
-       
         viewController.selectedCaratere
             .subscribe(onNext: {  [weak self] charatere in
                 self?.label.setupLabel(string: charatere)
             }).disposed(by: disposeBag)
-       
         present(viewController, animated: true, completion: nil)
     }
 
     func setAnchor() {
-        
-    //    self.navBar.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-    //    self.navBar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-
         self.label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 70).isActive = true
         self.label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         self.label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-
     }
 }
-

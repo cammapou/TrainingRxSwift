@@ -13,10 +13,5 @@ class CustomNavBar: UINavigationBar {
     
     func setNavBar() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
-        let navItem = UINavigationItem(title: "Test")
-
-        navBar.setItems([navItem], animated: false)
     }
 }

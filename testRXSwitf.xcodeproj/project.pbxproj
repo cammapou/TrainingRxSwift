@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		82F610D724570B4F00DB3AE7 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610D624570B4F00DB3AE7 /* CustomLabel.swift */; };
 		82F610D924570FE600DB3AE7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610D824570FE600DB3AE7 /* CustomButton.swift */; };
 		82F610DB2457110600DB3AE7 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610DA2457110600DB3AE7 /* CustomNavBar.swift */; };
+		82F610DD24574CBF00DB3AE7 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610DC24574CBF00DB3AE7 /* SearchBarViewController.swift */; };
+		82F610E124574D3900DB3AE7 /* CustomShearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610E024574D3900DB3AE7 /* CustomShearchBar.swift */; };
+		82F610E3245768A900DB3AE7 /* ExtensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610E2245768A900DB3AE7 /* ExtensionTableView.swift */; };
+		82F610E524576A7800DB3AE7 /* SearchBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F610E424576A7800DB3AE7 /* SearchBarTableViewCell.swift */; };
 		CBA1B68A79C4D6DE4C36E3C3 /* Pods_testRXSwitfTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD257C52735020207C6B552 /* Pods_testRXSwitfTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,10 @@
 		82F610D624570B4F00DB3AE7 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		82F610D824570FE600DB3AE7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		82F610DA2457110600DB3AE7 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		82F610DC24574CBF00DB3AE7 /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
+		82F610E024574D3900DB3AE7 /* CustomShearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShearchBar.swift; sourceTree = "<group>"; };
+		82F610E2245768A900DB3AE7 /* ExtensionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTableView.swift; sourceTree = "<group>"; };
+		82F610E424576A7800DB3AE7 /* SearchBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewCell.swift; sourceTree = "<group>"; };
 		C19C775DDA55C8BBF3650998 /* Pods-testRXSwitf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testRXSwitf.release.xcconfig"; path = "Target Support Files/Pods-testRXSwitf/Pods-testRXSwitf.release.xcconfig"; sourceTree = "<group>"; };
 		D0D26E9274B06AD15F7FDC25 /* Pods-testRXSwitfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testRXSwitfTests.release.xcconfig"; path = "Target Support Files/Pods-testRXSwitfTests/Pods-testRXSwitfTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC5EDB893A205B7D44530222 /* Pods_testRXSwitf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testRXSwitf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,14 +116,11 @@
 			children = (
 				82C2548B2457078B0074F43D /* AppDelegate.swift */,
 				82C2548D2457078B0074F43D /* SceneDelegate.swift */,
-				82C2548F2457078B0074F43D /* ViewController.swift */,
-				82F610D424570B0500DB3AE7 /* bouttonViewController.swift */,
+				82F610DF24574CE300DB3AE7 /* Views */,
+				82F610DE24574CD400DB3AE7 /* Controller */,
 				82C254942457078E0074F43D /* Assets.xcassets */,
 				82C254962457078E0074F43D /* LaunchScreen.storyboard */,
 				82C254992457078E0074F43D /* Info.plist */,
-				82F610D624570B4F00DB3AE7 /* CustomLabel.swift */,
-				82F610D824570FE600DB3AE7 /* CustomButton.swift */,
-				82F610DA2457110600DB3AE7 /* CustomNavBar.swift */,
 			);
 			path = testRXSwitf;
 			sourceTree = "<group>";
@@ -129,6 +134,29 @@
 			path = testRXSwitfTests;
 			sourceTree = "<group>";
 		};
+		82F610DE24574CD400DB3AE7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				82C2548F2457078B0074F43D /* ViewController.swift */,
+				82F610D424570B0500DB3AE7 /* bouttonViewController.swift */,
+				82F610DC24574CBF00DB3AE7 /* SearchBarViewController.swift */,
+				82F610E424576A7800DB3AE7 /* SearchBarTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		82F610DF24574CE300DB3AE7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				82F610D624570B4F00DB3AE7 /* CustomLabel.swift */,
+				82F610D824570FE600DB3AE7 /* CustomButton.swift */,
+				82F610DA2457110600DB3AE7 /* CustomNavBar.swift */,
+				82F610E024574D3900DB3AE7 /* CustomShearchBar.swift */,
+				82F610E2245768A900DB3AE7 /* ExtensionTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8549A167FEB37EE4600DD69D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +165,6 @@
 				3426F42A3FCFB0385DE30235 /* Pods-testRXSwitfTests.debug.xcconfig */,
 				D0D26E9274B06AD15F7FDC25 /* Pods-testRXSwitfTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -310,6 +337,10 @@
 			files = (
 				82F610D524570B0500DB3AE7 /* bouttonViewController.swift in Sources */,
 				82F610D724570B4F00DB3AE7 /* CustomLabel.swift in Sources */,
+				82F610DD24574CBF00DB3AE7 /* SearchBarViewController.swift in Sources */,
+				82F610E524576A7800DB3AE7 /* SearchBarTableViewCell.swift in Sources */,
+				82F610E3245768A900DB3AE7 /* ExtensionTableView.swift in Sources */,
+				82F610E124574D3900DB3AE7 /* CustomShearchBar.swift in Sources */,
 				82F610D924570FE600DB3AE7 /* CustomButton.swift in Sources */,
 				82C254902457078B0074F43D /* ViewController.swift in Sources */,
 				82C2548C2457078B0074F43D /* AppDelegate.swift in Sources */,
